@@ -23,11 +23,15 @@ const CourseSchema = new Schema({
     },
     category: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category'
-    }
+        ref: 'Category',
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+    },
 });
 
-CourseSchema.pre('validate', function(next) {
+CourseSchema.pre('validate', function (next) {
     this.slug = slugify(this.name, {
         lower: true,
         strict: true,
