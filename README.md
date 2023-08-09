@@ -1,17 +1,17 @@
 "# SmartEduProject" 
-*This project is coding for learning nodejs and its frameworks:
-*Express 
-*express-validator
-*nodemailer
-*bcrypt
-*slugify
-*body-parser
-*connect-flash
-*connect-mongo
-*ejs 
-*express-session
-*mongoose
-*devdependencies: nodemon 
+* This project is coding for learning nodejs and its frameworks:
+* Express 
+* express-validator
+* nodemailer
+* bcrypt
+* slugify
+* body-parser
+* connect-flash
+* connect-mongo
+* ejs 
+* express-session
+* mongoose
+* devdependencies: nodemon 
 
 Includes: 
 *Creating user
