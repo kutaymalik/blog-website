@@ -1,4 +1,5 @@
 "# SmartEduProject" 
+----
 * This project is coding for learning nodejs and its frameworks:
   ----
 * Express 
@@ -13,8 +14,6 @@
 * express-session
 * mongoose
 * devdependencies: nodemon
-
-  ----
 
 Includes: 
 ----
