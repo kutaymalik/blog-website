@@ -53,8 +53,8 @@ const sendEmail = async (req, res) => {
             port: 465,
             secure: true,
             auth: {
-                user: 'kutaymalikt@gmail.com', // gmail account
-                pass: 'gydehmxanrpzrraa1', // gmail password
+                user: forwarder.email, // gmail account
+                pass: forwarder.pass, // gmail password
             },
         });
 
