@@ -1,6 +1,6 @@
 "# SmartEduProject" 
 * This project is coding for learning nodejs and its frameworks:
-* ----
+  ----
 * Express 
 * express-validator
 * nodemailer
