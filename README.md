@@ -1,7 +1,7 @@
 # SmartEduProject 
 
 ## This project is coding for learning nodejs and its frameworks:
-  ----
+
 * Express 
 * express-validator
 * nodemailer
@@ -16,7 +16,7 @@
 * devdependencies: nodemon
 
 ## Includes: 
-----
+
 * Creating user
 * User Roles
 * Login - Register transactions and validation
