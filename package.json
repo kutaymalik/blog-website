@@ -2,7 +2,7 @@
   "name": "enessahin",
   "version": "1.0.0",
   "description": "Enes Sahin Website",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "nodemon app.js"
