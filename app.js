@@ -1,29 +1,24 @@
-import express from 'express';
-import mongoose from 'mongoose';
+import express from "express";
+import mongoose from "mongoose";
 import bodyParser from 'body-parser';
-import session from 'express-session';
-import MongoStore from 'connect-mongo';
-import flash from 'connect-flash';
+import session from "express-session";
+import MongoStore from "connect-mongo";
+import flash from "connect-flash";
 
-import { pageRoute } from './routes/pageRoute.js';
-import { courseRoute } from './routes/courseRoute.js';
-import { categoryRoute } from './routes/categoryRoute.js';
-import { userRoute } from './routes/userRoute.js';
+import { pageRoute } from "./routes/pageRoute.js";
 
 const app = express();
 
+
 // Connect DB
-await mongoose.connect('mongodb://127.0.0.1/smartedu-db').then(() => {
+await mongoose.connect('mongodb://127.0.0.1/enesSahin-db').then(() => {
     console.log('DB connected succesfully.');
 });
 
-// Template Engine
 app.set('view engine', 'ejs');
 
-// Global Variable
-global.userIN = null;
 
-// MIDDLEWARE
+// MIDDLEWARES
 app.use(express.static('public'));
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -33,7 +28,7 @@ app.use(
         resave: false,
         saveUninitialized: true,
         store: MongoStore.create({
-            mongoUrl: 'mongodb://127.0.0.1/smartedu-db',
+            mongoUrl: 'mongodb://127.0.0.1/enesSahin-db',
         }),
     })
 );
@@ -46,14 +41,9 @@ app.use((req, res, next) => {
 const port = 3000;
 
 // Routers
-app.use('*', (req, res, next) => {
-    userIN = req.session.userID;
-    next();
-});
+
+// Routers
 app.use('/', pageRoute);
-app.use('/courses', courseRoute);
-app.use('/categories', categoryRoute);
-app.use('/users', userRoute);
 
 app.listen(port, () => {
     console.log(`App started on ${port} port`);
