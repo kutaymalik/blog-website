@@ -4,6 +4,9 @@ import bodyParser from 'body-parser';
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import flash from "connect-flash";
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 import { pageRoute } from "./routes/pageRoute.js";
 
@@ -11,7 +14,7 @@ const app = express();
 
 
 // Connect DB
-await mongoose.connect('mongodb://127.0.0.1/enesSahin-db').then(() => {
+await mongoose.connect(process.env.MONGODB_CONNECT_URI).then(() => {
     console.log('DB connected succesfully.');
 });
 
@@ -28,7 +31,7 @@ app.use(
         resave: false,
         saveUninitialized: true,
         store: MongoStore.create({
-            mongoUrl: 'mongodb://127.0.0.1/enesSahin-db',
+            mongoUrl: process.env.MONGODB_CONNECT_URI,
         }),
     })
 );
@@ -38,7 +41,7 @@ app.use((req, res, next) => {
     next();
 })
 
-const port = 3000;
+const port = process.env.PORT;
 
 // Routers
 
