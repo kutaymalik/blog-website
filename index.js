@@ -12,7 +12,7 @@ import { pageRoute } from "./routes/pageRoute.js";
 
 const app = express();
 
-mongoose.set("strictQuery", false);
+mongoose.set('strictQuery', true);
 // Connect DB
 await mongoose.connect(process.env.MONGODB_CONNECT_URI).then(() => {
     console.log('DB connected succesfully.');
